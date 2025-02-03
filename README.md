@@ -27,3 +27,9 @@ Image of desktop view
 
 Image of mobile view
 ![alt text](./images/Screenshot%202025-02-01%20at%204.20.53 PM.png)
+
+- [Video 1-Project SE_Spots](https://drive.google.com/file/d/1n00HWM-NcK1Nb2BuzdUXAdbZ_vE0dGki/view?usp=drive_link)
+
+- [Video 2-Project SE_Spots](https://drive.google.com/file/d/1P_Rd4xB5oRo2Lhi6cDkQGn3zRqmrJxV2/view?usp=drive_link)
+
+- [Video 3-Project SE_Spots](https://drive.google.com/file/d/1hSAwdwY0rsj_cjRAzEkIrAK6OxD7o5cl/view?usp=drive_link)
