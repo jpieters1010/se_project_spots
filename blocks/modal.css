@@ -61,12 +61,7 @@
   font-weight: 500;
   line-height: 1;
   border: 1px solid #212121;
-  opacity: 40%;
   border-radius: 8px;
-}
-
-.modal__input[type="text"] {
-  color: #212121;
 }
 
 .modal__submit-btn {
