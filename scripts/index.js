@@ -41,17 +41,17 @@ const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
 function getCardElement(data) {
-  const CardElement = cardTemplate.content
+  const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
 
-  const cardNameEl = CardElement.querySelector(".card__title");
-  // select the image element
+  const cardNameEl = cardElement.querySelector(".card__title");
+  // select the image element //
 
   cardNameEl.textContent = data.name;
-  // assign values to the image src and alt
+  // assign values to the image src and alt //
 
-  return CardElement;
+  return cardElement;
 }
 
 function openModal() {
