@@ -55,13 +55,19 @@ function getCardElement(data) {
   return cardElement;
 }
 
+// This function is opens the modal
 function openModal() {
+  // Setting the name input value to be our profile name textcontent
   editModalNameInput.value = profileName.textContent;
+
   editModalDescriptionInput.value = profileDescription.textContent;
-  editModal.classList.add("modal__opened");
+  // adding the modal_opened class which has the visible css property
+  editModal.classList.add("modal_opened");
 }
+
+// This function is closing the modal by removing the modal_opened class which in the css has visible
 function closeModal() {
-  editModal.classList.remove("modal__opened");
+  editModal.classList.remove("modal_opened");
 }
 
 function handleEditFormSubmit(evt) {
@@ -76,6 +82,6 @@ editModalCloseBtn.addEventListener("click", closeModal);
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 for (let i = 0; i < intialCards.length; i++) {
-  const CardElement = getCardElement(intialCards[i]);
-  cardsList.prepend(CardElement);
+  const cardElement = getCardElement(intialCards[i]);
+  cardsList.prepend(cardElement);
 }
