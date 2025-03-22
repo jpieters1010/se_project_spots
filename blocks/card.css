@@ -34,12 +34,21 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .card__like-button:hover {
   cursor: pointer;
-  opacity: 100%;
+  opacity: 1;
+}
+
+.card__like-button_liked {
+  background-image: url("../images/State=Liked.svg");
+  opacity: 1;
+}
+
+.card__like-button_liked:hover {
+  background-image: url("../images/State=State4.svg");
 }
 
 @media screen and (max-width: 627px) {
