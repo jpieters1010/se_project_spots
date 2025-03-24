@@ -145,8 +145,22 @@
   }
 
   .modal__close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__close-btn_type_preview {
     top: -32px;
     right: 16px;
+  }
+  .modal__close-btn_type_edit {
+    top: 32px;
+    right: 50px;
+  }
+
+  .modal__close-btn_type_add {
+    top: 24px;
+    right: 50px;
   }
 
   .modal__label {
