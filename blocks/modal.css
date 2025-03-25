@@ -30,7 +30,7 @@
   border-radius: 8px;
 }
 
-.modal__container_type_preview {
+.modal__preview-container {
   padding: 8px;
   background: transparent;
   display: flex;
@@ -133,8 +133,13 @@
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
-    max-width: 90vw;
   }
+
+  .modal__image {
+    max-width: 90vw;
+    object-fit: contain;
+  }
+
   .modal__container {
     padding: 12px;
   }

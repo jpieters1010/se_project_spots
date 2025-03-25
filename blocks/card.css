@@ -31,7 +31,7 @@
 }
 
 .card__like-button {
-  background-image: url("../images/Heart-New.svg");
+  background-image: url("../images/initial-heart.svg");
   background-size: contain;
   background-repeat: no-repeat;
   width: 23px;
@@ -42,6 +42,7 @@
 }
 
 .card__like-button:hover {
+  background-image: url("../images/State=Hover.png");
   cursor: pointer;
   opacity: 1;
 }
