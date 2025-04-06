@@ -47,6 +47,7 @@ const editModalDescriptionInput = editModal.querySelector(
 
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
+const cardSubmitBtn = cardModal.querySelector(".modal__submit-btn");
 const cardModalCloseBtn = cardModal.querySelector(".modal__close-btn");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
@@ -115,25 +116,31 @@ function handleEditFormSubmit(evt) {
 }
 
 function handleAddCardSubmit(evt) {
-  evt.preventDefault(); // Prevents the form from submitting traditionally
+  evt.preventDefault();
 
-  // 1. Create a new card object using the input values
-  const inputValues = {
-    name: cardNameInput.value,
-    link: cardLinkInput.value,
-  };
+  const nameIsValid = checkInputValidity(cardForm, cardNameInput, settings);
+  const linkIsValid = checkInputValidity(cardForm, cardLinkInput, settings);
 
-  // 2. Create a new card element
-  const cardElement = getCardElement(inputValues);
+  if (nameIsValid && linkIsValid) {
+    // 1. Create a new card object using the input values
+    const inputValues = {
+      name: cardNameInput.value,
+      link: cardLinkInput.value,
+    };
 
-  // 3. Add the new card to the beginning of the cards list
-  cardsList.prepend(cardElement);
+    // 2. Create a new card element
+    const cardElement = getCardElement(inputValues);
 
-  // 4. Close the modal
-  closeModal(cardModal);
+    // 3. Add the new card to the beginning of the cards list
+    cardsList.prepend(cardElement);
+    disableButton(cardSubmitBtn, settings);
 
-  // 5. Reset the form
-  cardForm.reset();
+    // 4. Close the modal
+    closeModal(cardModal);
+
+    // 5. Reset the form
+    cardForm.reset();
+  }
 }
 
 profileEditButton.addEventListener("click", () => {
