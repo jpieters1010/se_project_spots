@@ -102,16 +102,27 @@ function openModal(modal) {
 
   // adding the modal_opened class which has the visible css property
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 // This function is closing the modal by removing the modal_opened class which in the css has visible
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 function closeModalOnOverlay(evt) {
   if (evt.target === evt.currentTarget) {
     closeModal(evt.target);
+  }
+}
+
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
   }
 }
 
