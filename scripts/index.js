@@ -58,6 +58,7 @@ const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(
   ".modal__close-btn_type_preview"
 );
+const modals = document.querySelectorAll(".modal");
 
 // Card related elements
 const cardTemplate = document.querySelector("#card-template");
@@ -108,6 +109,12 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
+function closeModalOnOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.target);
+  }
+}
+
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
@@ -146,6 +153,7 @@ function handleAddCardSubmit(evt) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(editFormElement, settings);
   openModal(editModal);
 });
 
@@ -163,6 +171,10 @@ cardModalCloseBtn.addEventListener("click", () => {
 
 previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
+});
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", closeModalOnOverlay);
 });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);

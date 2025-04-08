@@ -29,6 +29,23 @@ const checkInputValidity = (formEl, inputEl, config) => {
   }
 };
 
+function resetValidation(formEl, config) {
+  const errorSpans = formEl.querySelectorAll(`.${config.errorClass}`);
+  errorSpans.forEach((span) => {
+    span.classList.add("modal__error_hidden");
+    span.textContent = "";
+  });
+
+  const errorInputs = formEl.querySelectorAll(`.${config.inputErrorClass}`);
+  errorInputs.forEach((input) => {
+    input.classList.remove(config.inputErrorClass);
+  });
+
+  const submitButton = formEl.querySelector(config.submitButtonSelector);
+  submitButton.disabled = false;
+  submitButton.classList.remove(config.inactiveButtonClass);
+}
+
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
     buttonEl.disabled = true;
