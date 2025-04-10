@@ -136,29 +136,24 @@ function handleEditFormSubmit(evt) {
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
-  const nameIsValid = checkInputValidity(cardForm, cardNameInput, settings);
-  const linkIsValid = checkInputValidity(cardForm, cardLinkInput, settings);
+  // 1. Create a new card object using the input values
+  const inputValues = {
+    name: cardNameInput.value,
+    link: cardLinkInput.value,
+  };
 
-  if (nameIsValid && linkIsValid) {
-    // 1. Create a new card object using the input values
-    const inputValues = {
-      name: cardNameInput.value,
-      link: cardLinkInput.value,
-    };
+  // 2. Create a new card element
+  const cardElement = getCardElement(inputValues);
 
-    // 2. Create a new card element
-    const cardElement = getCardElement(inputValues);
+  // 3. Add the new card to the beginning of the cards list
+  cardsList.prepend(cardElement);
 
-    // 3. Add the new card to the beginning of the cards list
-    cardsList.prepend(cardElement);
-    disableButton(cardSubmitBtn, settings);
+  // 4. Close the modal
+  closeModal(cardModal);
 
-    // 4. Close the modal
-    closeModal(cardModal);
-
-    // 5. Reset the form
-    cardForm.reset();
-  }
+  // 5. Reset the form
+  cardForm.reset();
+  disableButton(cardSubmitBtn, settings);
 }
 
 profileEditButton.addEventListener("click", () => {

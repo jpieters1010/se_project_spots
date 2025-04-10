@@ -30,25 +30,19 @@ const checkInputValidity = (formEl, inputEl, config) => {
 };
 
 function resetValidation(formEl, config) {
-  const errorSpans = formEl.querySelectorAll(`.${config.errorClass}`);
-  errorSpans.forEach((span) => {
-    span.classList.add("modal__error_hidden");
-    span.textContent = "";
-  });
-
-  const errorInputs = formEl.querySelectorAll(`.${config.inputErrorClass}`);
-  errorInputs.forEach((input) => {
-    input.classList.remove(config.inputErrorClass);
+  const inputList = formEl.querySelectorAll(config.inputSelector);
+  inputList.forEach((inputEl) => {
+    hideInputError(formEl, inputEl, config);
   });
 
   const submitButton = formEl.querySelector(config.submitButtonSelector);
-  submitButton.disabled = false;
-  submitButton.classList.remove(config.inactiveButtonClass);
+  submitButton.disabled = true;
+  submitButton.classList.add(config.inactiveButtonClass);
 }
 
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonEl.disabled = true;
+    disableButton(buttonEl, config);
     buttonEl.classList.add(config.inactiveButtonClass);
   } else {
     buttonEl.disabled = false;
