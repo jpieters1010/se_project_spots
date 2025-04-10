@@ -36,14 +36,12 @@ function resetValidation(formEl, config) {
   });
 
   const submitButton = formEl.querySelector(config.submitButtonSelector);
-  submitButton.disabled = true;
-  submitButton.classList.add(config.inactiveButtonClass);
+  disableButton(submitButton, config);
 }
 
 const toggleButtonState = (inputList, buttonEl, config) => {
   if (hasInvalidInput(inputList)) {
     disableButton(buttonEl, config);
-    buttonEl.classList.add(config.inactiveButtonClass);
   } else {
     buttonEl.disabled = false;
     buttonEl.classList.remove(config.inactiveButtonClass);
