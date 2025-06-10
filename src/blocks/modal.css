@@ -81,6 +81,17 @@
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+.modal__title-break {
+  display: none;
+}
+
+.modal__title.modal__title--delete {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 500;
 }
 
 .modal__label {
@@ -90,6 +101,7 @@
   margin-bottom: 32px;
   opacity: 70%;
   font-weight: 500;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .modal__input {
@@ -115,13 +127,22 @@
 }
 
 .modal__submit-btn {
+  height: 52px;
   width: 156px;
   padding: 18px 0;
-  color: #fcf5e3;
   background-color: #212121;
+  color: #fff;
   border-radius: 8px;
+  border: none;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+.modal__submit-btn.modal__submit-btn--delete {
+  background-color: #ff6565;
+  color: #212121;
 }
 
 .modal__submit-btn_disabled {
@@ -129,6 +150,43 @@
   background-color: #808080;
   cursor: not-allowed;
   pointer-events: none;
+}
+
+.modal__form.modal__form--delete {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal__close-btn.modal__close-btn-delete-modal {
+  right: -45px;
+  top: -5px;
+  background-image: url(../images/CloselightIconWhite.svg);
+  opacity: 100%;
+}
+
+.modal__close-btn-delete-modal img {
+  display: none;
+}
+
+.modal__cancel-btn {
+  width: 156px;
+  height: 52px;
+  background-color: white;
+  font-size: 16px;
+  font-family: "Poppins";
+  color: #212121;
+  border: 1px;
+  border-color: #212121;
+  border: solid;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal__cancel-btn:active {
+  background-color: #212121;
+  color: #fff;
 }
 
 .modal__caption {
@@ -168,6 +226,9 @@
     margin: 10px 0 34px;
   }
 
+  .modal__title-break {
+    display: inline;
+  }
   .modal__close-btn {
     top: 12px;
     right: 12px;
@@ -185,6 +246,23 @@
   .modal__close-btn_type_add {
     top: 24px;
     right: 50px;
+  }
+
+  .modal__form.modal__form--delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal__submit-btn.modal__submit-btn--delete {
+    height: 52px;
+    width: 156px;
+  }
+
+  .modal__close-btn.modal__close-btn-delete-modal {
+    top: -60px;
+    right: 0px;
+    font-size: 20px;
   }
 
   .modal__label {

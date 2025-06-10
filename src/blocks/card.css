@@ -30,6 +30,12 @@
   max-width: 353px;
 }
 
+.card__caption {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .card__like-button {
   background-image: url("../images/initial-heart.svg");
   background-size: contain;
@@ -47,11 +53,11 @@
   opacity: 1;
 }
 
-.card__like-button_liked {
+.card__like-button_active {
   background-image: url("../images/State=Liked.svg");
   opacity: 1;
 }
-.card__like-button_liked:hover {
+.card__like-button_active:hover {
   background-image: url("../images/State=State4.svg");
 }
 .card__delete-button {
