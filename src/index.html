@@ -6,31 +6,31 @@
     <meta name="description" content="Coffeeshop webpage" />
     <meta name="keywords" content="Spots" />
     <meta name="author" content="Jessica Pieters" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="" />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="images/Logo.svg" alt="Spot logo" class="header__logo" />
+        <img src="" alt="Spot logo" class="header__logo" />
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="./images/avatar.jpg"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img src="" alt="Pencil icon" class="profile__pencil-icon" />
+            </button>
+            <img src="" alt="Bessie Coleman" class="profile__avatar" />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button type="button" class="profile__edit-btn">
-              <img src="./images/pencil2.svg" alt="Pencil icon" />Edit Profile
+              <img src="" alt="Pencil icon" />Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-btn">
-            <img src="./images/plus.svg" alt="Plus icon" />New Post
+            <img src="" alt="Plus icon" />New Post
           </button>
         </section>
         <section class="cards page__section">
@@ -41,6 +41,7 @@
                 <button type="button" class="card__delete-button"></button>
                 <div class="card__content">
                   <h2 class="card__title"></h2>
+                  <p class="card__caption"></p>
                   <button type="button" class="card__like-button"></button>
                 </div>
               </li>
@@ -51,11 +52,10 @@
       <footer class="footer">
         <p class="footer__spots">2025 &copy; Spots</p>
       </footer>
-
       <div class="modal" id="edit-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="images/x.svg" alt="Close button" />
+            <img src="" alt="Close button" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form" novalidate>
@@ -96,7 +96,7 @@
       <div class="modal" id="add-card-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="./images/x.svg" alt="close button" />
+            <img src="" alt="close button" />
           </button>
           <h2 class="modal__title">New Post</h2>
           <form id="add-card-form" class="modal__form" novalidate>
@@ -139,11 +139,61 @@
           class="modal__close-btn modal__close-btn_type_preview"
           type="button"
         ></button>
-        <img class="modal__image" src="#" alt="Image preview" />
+        <img class="modal__image" src="" alt="Image preview" />
         <p class="modal__caption"></p>
       </div>
     </div>
-    <script defer src="./scripts/validation.js"></script>
-    <script defer src="./scripts/index.js"></script>
+
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close-btn">
+          <img src="" alt="Close button" />
+        </button>
+        <h2 class="modal__title">Edit profile avatar</h2>
+        <form class="modal__form" id="edit-avatar-form">
+          <label class="modal__label" for="profile-avatar-input">
+            Profile Picture
+            <input
+              id="profile-avatar-input"
+              class="modal__input"
+              name="avatar"
+              type="url"
+              placeholder="Paste the link to an image"
+              required
+            />
+            <span id="profile-avatar-input-error" class="modal__error"></span>
+          </label>
+
+          <button class="modal__submit-btn" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- TODO -style modal-->
+    <div class="modal" id="delete-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close-btn modal__close-btn-delete-modal"
+        >
+          <img src="" alt="Close button" />
+        </button>
+        <h2 class="modal__title modal__title--delete">
+          Are you sure your want to <br class="modal__title-break" />
+          delete this image?
+        </h2>
+        <form class="modal__form modal__form--delete" id="delete-modal">
+          <button
+            class="modal__submit-btn modal__submit-btn--delete"
+            type="submit"
+          >
+            Delete
+          </button>
+          <button class="modal__cancel-btn" id="cancel-modal" type="button">
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
